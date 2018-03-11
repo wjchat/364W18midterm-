@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h3>All Saved Tweets</h3>
+
+<ol>
+{% for tweet in tweets %}
+
+<p>{{ tweet.text }}<p>
+<ul>
+	<li>Favorites: {{tweet.favorites}} </li>
+	<li>Retweets: {{ tweet.retweets }}</li>
+	<li>Tweet ID: {{ tweet.id }}</li>
+
+</ul>
+
+<br>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Saved users</h1>
+
+<ul>
+{% for user in users %}
+	<h2>{{ user.displayName }}</h2>
+	<p>Followers: TO DO</p>
+	<p>ID: {{ user.id }}</p>
+	<p>Username: {{user.userName }}</p>
+	<p>Number of Followers: {{ user.numFollowers }}</p>
+	<p><a href="/{{ user.userName }}tweets">Save and view 10 of their tweets</a></p>
+	<p><a href="/{{ user.userName}}followers"> See some of their followers</a></p>
+{% endfor %}
+
+</ul>
+
+{% endblock %}
+	

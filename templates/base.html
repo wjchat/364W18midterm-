@@ -1,0 +1,30 @@
+
+
+{% block content1 %}
+
+<div>
+	<p><a href="/alltweets">Show all Saved Tweets</a></p>
+	<p><a href="{{ url_for('users_result') }}">Show All Users</a></p>
+	<p><a href="/mostfavorites">Most Favorited Tweet</a></p>
+	<p><a href="{{url_for('search') }}">Search for Users</a></p>
+	<p><a href="{{ url_for('register') }}">Register and see other registered users</a></p>
+
+</div>
+<br>
+
+<br>
+<div>
+	{% for message in get_flashed_messages() %}
+    <strong>*** {{ message }} ***</strong>
+	{% endfor %}
+
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+
+
+
+

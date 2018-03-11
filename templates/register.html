@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form action = "{{ url_for('registered_users') }}" method = 'GET'>
+
+	{{ form.hidden_tag() }}
+	{{ form.name.label }} {{ form.name() }} <br>
+	{{ form.age.label }} {{ form.age() }} <br>
+	{{ form.submit() }} 
+
+
+
+
+{% endblock %}

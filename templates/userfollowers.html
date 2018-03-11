@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Displaying follower(s) of {{ user }}.</h1>
+
+<form action= "{{ see_followers }}" method="POST">
+
+	{{ form.hidden_tag() }}
+	{{ form.number.label }} {{ form.number() }} <br>
+    {{ form.submit() }}
+
+
+</form>
+
+<ul>
+	
+	{% for each in followers %}
+	
+		{% if each.followersCount > number %}
+			
+
+		<li>
+			<ul>{{ each.displayName }}
+			
+				<li> {{ each.userName }}</li>
+				<li> {{ each.description }}</li>
+				<li>Has {{ each.followersCount }} followers</li>
+
+			</ul>
+
+
+		</li>
+
+		{% endif %}
+
+
+	{% endfor %}
+
+
+
+</ul>
+
+
+{{ each }}
+
+{% endblock %}
